@@ -47,6 +47,7 @@ RUN apt install -y \
     apt-utils \
     software-properties-common
 RUN add-apt-repository -y ppa:deadsnakes/ppa
+RUN add-apt-repository -y ppa:ubuntugis/ubuntugis-unstable
 RUN apt install -y --no-install-recommends --no-install-suggests \
     build-essential \
     python \
