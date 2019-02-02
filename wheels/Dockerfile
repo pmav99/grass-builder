@@ -18,15 +18,12 @@ ARG BUILD_DATE
 
 # Labels.
 LABEL authors="{$AUTHORS}" \
-      maintainer="${MAINTAINERS}" \
+      maintainers="${MAINTAINERS}" \
       org.label-schema.name="${PROJECT_NAME}" \
       org.label-schema.description="${PROJECT_DESCRIPTION}" \
       org.label-schema.url="${PROJECT_URL}" \
       org.label-schema.vendor="mine INC" \
       org.label-schema.vcs-url="${VCS_URL}" \
-      org.label-schema.build-date="${BUILD_DATE}" \
-      org.label-schema.vcs-ref="${VCS_REF}" \
-      org.label-schema.version="${IMAGE_VERSION}" \
       org.label-schema.docker.cmd="docker run ..." \
       org.label-schema.schema-version="1.0"
 
@@ -35,3 +32,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 COPY /scripts/build_wheels.sh /
 RUN /build_wheels.sh
+
+LABEL org.label-schema.build-date="${BUILD_DATE}" \
+      org.label-schema.vcs-ref="${VCS_REF}" \
+      org.label-schema.version="${IMAGE_VERSION}" \
