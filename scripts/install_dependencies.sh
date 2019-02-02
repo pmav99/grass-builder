@@ -118,8 +118,8 @@ sudo useradd \
 sudo su builder
 cd /home/builder
 
-virtualenv -p python27 venv27
-virtualenv -p python36 venv36
-virtualenv -p python37 venv37
+virtualenv -p python2.7 venv27
+virtualenv -p python3.6 venv36
+virtualenv -p python3.7 venv37
 
 git clone --depth=10 https://github.com/GRASS-GIS/grass-ci grass
