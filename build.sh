@@ -15,7 +15,7 @@ docker build \
   --build-arg VCS_URL="${VCS_URL}" \
   --build-arg IMAGE_VERSION="${IMAGE_VERSION}" \
   --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
-  --build-arg VCS_REF=`git rev-parse --short HEAD` \
+  --build-arg VCS_REF=`git rev-parse HEAD` \
   -t "${REGISTRY}"/"${ORGANIZATION}"/"${REPOSITORY}":'latest' \
   -t "${REGISTRY}"/"${ORGANIZATION}"/"${REPOSITORY}":"${IMAGE_VERSION}" \
   -f Dockerfile \
